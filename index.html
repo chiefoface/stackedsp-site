@@ -7,18 +7,17 @@
     <meta name="description" content="StackedSP places elite technical talent at venture-backed startups. We connect exceptional engineers with the companies building the future.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" href="https://stackedsp.com/wp-content/uploads/2022/06/cropped-Stacked-Favicon-512-×-512-px-32x32.png" sizes="32x32">
     <style>
         :root {
-            --primary: #0A0A0A;
-            --secondary: #171717;
-            --accent: #3B82F6;
-            --accent-hover: #2563EB;
-            --text: #FAFAFA;
-            --text-muted: #A1A1AA;
-            --border: #27272A;
-            --gradient-1: #3B82F6;
-            --gradient-2: #8B5CF6;
+            --primary: #323232;
+            --secondary: #344a82;
+            --accent: #dbff00;
+            --text: #ffffff;
+            --text-muted: #bdbdbd;
+            --border: #484848;
+            --dark: #1a1a1a;
         }
 
         * {
@@ -32,28 +31,22 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
             background: var(--primary);
             color: var(--text);
-            line-height: 1.6;
+            line-height: 1.7;
+            font-weight: 500;
+            font-size: 17px;
             -webkit-font-smoothing: antialiased;
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Subtle grid background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
-                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
-            background-size: 60px 60px;
-            pointer-events: none;
-            z-index: 0;
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            font-weight: 400;
+            line-height: 1.2;
+            letter-spacing: 0.02em;
         }
 
         .container {
@@ -76,7 +69,7 @@
         }
 
         nav.scrolled {
-            background: rgba(10, 10, 10, 0.9);
+            background: rgba(50, 50, 50, 0.95);
             backdrop-filter: blur(20px);
             border-bottom: 1px solid var(--border);
             padding: 1rem 0;
@@ -88,14 +81,9 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .logo img {
+            height: 40px;
+            width: auto;
         }
 
         .nav-links {
@@ -105,22 +93,23 @@
         }
 
         .nav-links a {
-            color: var(--text-muted);
+            color: var(--text);
             text-decoration: none;
-            font-size: 0.9rem;
-            font-weight: 500;
+            font-size: 14px;
+            font-weight: 700;
+            text-transform: uppercase;
             transition: color 0.2s ease;
         }
 
         .nav-links a:hover {
-            color: var(--text);
+            color: var(--accent);
         }
 
         .nav-cta {
             background: var(--accent);
-            color: white;
+            color: var(--primary);
             padding: 0.75rem 1.5rem;
-            border-radius: 8px;
+            border-radius: 0;
             text-decoration: none;
             font-weight: 600;
             font-size: 0.9rem;
@@ -128,7 +117,7 @@
         }
 
         .nav-cta:hover {
-            background: var(--accent-hover);
+            background: #fff;
             transform: translateY(-1px);
         }
 
@@ -142,18 +131,6 @@
             overflow: hidden;
         }
 
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 20%;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 800px;
-            height: 800px;
-            background: radial-gradient(circle, rgba(59, 130, 246, 0.15) 0%, transparent 70%);
-            pointer-events: none;
-        }
-
         .hero-content {
             max-width: 800px;
         }
@@ -162,10 +139,10 @@
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: var(--secondary);
+            background: var(--border);
             border: 1px solid var(--border);
             padding: 0.5rem 1rem;
-            border-radius: 100px;
+            border-radius: 0;
             font-size: 0.85rem;
             color: var(--text-muted);
             margin-bottom: 2rem;
@@ -174,7 +151,7 @@
         .hero-badge span {
             width: 6px;
             height: 6px;
-            background: #22C55E;
+            background: var(--accent);
             border-radius: 50%;
             animation: pulse-dot 2s infinite;
         }
@@ -185,18 +162,14 @@
         }
 
         .hero h1 {
-            font-size: clamp(2.5rem, 6vw, 4.5rem);
-            font-weight: 700;
-            letter-spacing: -0.03em;
-            line-height: 1.1;
+            font-size: clamp(3rem, 8vw, 6rem);
+            line-height: 0.95;
             margin-bottom: 1.5rem;
+            color: var(--accent);
         }
 
-        .hero h1 .gradient {
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .hero h1 .white {
+            color: var(--text);
         }
 
         .hero p {
@@ -218,24 +191,22 @@
             align-items: center;
             gap: 0.5rem;
             padding: 1rem 2rem;
-            border-radius: 10px;
             font-weight: 600;
             font-size: 1rem;
             text-decoration: none;
-            transition: all 0.2s ease;
+            transition: all 0.35s cubic-bezier(.3,.86,.36,.95);
             cursor: pointer;
             border: none;
         }
 
         .btn-primary {
             background: var(--accent);
-            color: white;
+            color: var(--primary);
         }
 
         .btn-primary:hover {
-            background: var(--accent-hover);
+            background: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(59, 130, 246, 0.3);
         }
 
         .btn-secondary {
@@ -245,7 +216,7 @@
         }
 
         .btn-secondary:hover {
-            background: var(--secondary);
+            background: var(--border);
             border-color: var(--text-muted);
         }
 
@@ -267,13 +238,10 @@
         }
 
         .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 4rem;
+            color: var(--accent);
+            line-height: 1;
         }
 
         .stat-label {
@@ -294,8 +262,8 @@
         }
 
         .section-label {
-            font-size: 0.85rem;
-            font-weight: 600;
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 1.25rem;
             color: var(--accent);
             text-transform: uppercase;
             letter-spacing: 0.1em;
@@ -303,9 +271,7 @@
         }
 
         .section-title {
-            font-size: clamp(2rem, 4vw, 3rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
         }
 
@@ -321,11 +287,10 @@
         }
 
         .service-card {
-            background: var(--secondary);
+            background: var(--dark);
             border: 1px solid var(--border);
-            border-radius: 16px;
             padding: 2.5rem;
-            transition: all 0.3s ease;
+            transition: all 0.35s cubic-bezier(.3,.86,.36,.95);
         }
 
         .service-card:hover {
@@ -336,8 +301,7 @@
         .service-icon {
             width: 48px;
             height: 48px;
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            border-radius: 12px;
+            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -346,8 +310,7 @@
         }
 
         .service-card h3 {
-            font-size: 1.25rem;
-            font-weight: 600;
+            font-size: 1.75rem;
             margin-bottom: 0.75rem;
         }
 
@@ -371,14 +334,12 @@
         }
 
         .why-content h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
-            letter-spacing: -0.02em;
+            font-size: clamp(2.5rem, 5vw, 3rem);
             margin-bottom: 1.5rem;
         }
 
         .why-content p {
-            color: var(--text-muted);
+            color: rgba(255,255,255,0.7);
             font-size: 1.1rem;
             margin-bottom: 2rem;
             line-height: 1.8;
@@ -400,12 +361,14 @@
             width: 24px;
             height: 24px;
             background: var(--accent);
-            border-radius: 50%;
+            color: var(--primary);
+            border-radius: 0;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 0.8rem;
             flex-shrink: 0;
+            font-weight: 700;
         }
 
         .why-visual {
@@ -415,7 +378,6 @@
         .why-card {
             background: var(--primary);
             border: 1px solid var(--border);
-            border-radius: 16px;
             padding: 2rem;
         }
 
@@ -433,10 +395,9 @@
         }
 
         .why-card-badge {
-            background: rgba(34, 197, 94, 0.1);
-            color: #22C55E;
+            background: rgba(219, 255, 0, 0.15);
+            color: var(--accent);
             padding: 0.25rem 0.75rem;
-            border-radius: 100px;
             font-size: 0.8rem;
             font-weight: 500;
         }
@@ -456,8 +417,7 @@
         .candidate-avatar {
             width: 40px;
             height: 40px;
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            border-radius: 50%;
+            background: var(--secondary);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -482,8 +442,7 @@
         .candidate-status {
             font-size: 0.8rem;
             padding: 0.25rem 0.75rem;
-            border-radius: 100px;
-            background: rgba(59, 130, 246, 0.1);
+            background: rgba(219, 255, 0, 0.1);
             color: var(--accent);
         }
 
@@ -510,7 +469,7 @@
             left: calc(100% + 1rem);
             width: calc(100% - 48px);
             height: 2px;
-            background: linear-gradient(90deg, var(--border), transparent);
+            background: linear-gradient(90deg, var(--accent), transparent);
         }
 
         .process-step:last-child::after {
@@ -518,22 +477,21 @@
         }
 
         .step-number {
+            font-family: 'Bebas Neue', sans-serif;
             width: 48px;
             height: 48px;
-            background: var(--secondary);
-            border: 1px solid var(--border);
-            border-radius: 50%;
+            background: var(--dark);
+            border: 2px solid var(--accent);
             display: flex;
             align-items: center;
             justify-content: center;
-            font-weight: 700;
-            font-size: 1.1rem;
+            font-size: 1.5rem;
             margin-bottom: 1.5rem;
+            color: var(--accent);
         }
 
         .process-step h3 {
-            font-size: 1.1rem;
-            font-weight: 600;
+            font-size: 1.5rem;
             margin-bottom: 0.5rem;
         }
 
@@ -549,49 +507,37 @@
         }
 
         .cta-box {
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            border-radius: 24px;
+            background: var(--accent);
+            color: var(--primary);
             padding: 4rem;
             text-align: center;
             position: relative;
             overflow: hidden;
         }
 
-        .cta-box::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.5;
-        }
-
         .cta-box h2 {
-            font-size: clamp(2rem, 4vw, 2.5rem);
-            font-weight: 700;
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
             margin-bottom: 1rem;
-            position: relative;
+            color: var(--primary);
         }
 
         .cta-box p {
             font-size: 1.1rem;
-            opacity: 0.9;
             max-width: 500px;
             margin: 0 auto 2rem;
-            position: relative;
+            color: var(--primary);
+            opacity: 0.8;
         }
 
         .cta-box .btn {
-            background: white;
+            background: var(--primary);
             color: var(--accent);
-            position: relative;
         }
 
         .cta-box .btn:hover {
+            background: var(--secondary);
+            color: #fff;
             transform: translateY(-2px);
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
         }
 
         /* Footer */
@@ -606,13 +552,9 @@
             align-items: center;
         }
 
-        .footer-logo {
-            font-size: 1.25rem;
-            font-weight: 700;
-            background: linear-gradient(135deg, var(--gradient-1), var(--gradient-2));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        .footer-logo img {
+            height: 30px;
+            width: auto;
         }
 
         .footer-links {
@@ -629,7 +571,7 @@
         }
 
         .footer-links a:hover {
-            color: var(--text);
+            color: var(--accent);
         }
 
         .footer-copy {
@@ -681,7 +623,7 @@
             }
 
             .stat-number {
-                font-size: 2rem;
+                font-size: 3rem;
             }
 
             .services-grid {
@@ -733,7 +675,9 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="container">
-            <div class="logo">StackedSP</div>
+            <a href="/" class="logo">
+                <img src="https://stackedsp.com/wp-content/uploads/2022/06/logo.svg" alt="StackedSP">
+            </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
                 <li><a href="#why">Why Us</a></li>
@@ -753,10 +697,11 @@
                     Currently placing at seed & Series A startups
                 </div>
                 <h1>
-                    We place <span class="gradient">elite engineers</span> at the startups building the future.
+                    <span class="white">You've got bold plans</span><br>
+                    to change the world.
                 </h1>
                 <p>
-                    StackedSP is a specialized recruiting firm connecting exceptional technical talent with venture-backed companies. No noise. Just the right people.
+                    We find you the extraordinary people you need to do that. StackedSP helps tech startups achieve audacious goals by stacking their teams with champions.
                 </p>
                 <div class="hero-buttons">
                     <a href="mailto:ilan@stackedsp.com" class="btn btn-primary">
@@ -799,7 +744,7 @@
         <div class="container">
             <div class="section-header fade-in">
                 <div class="section-label">What We Do</div>
-                <h2 class="section-title">Technical Recruiting, Elevated</h2>
+                <h2 class="section-title">Hire Champions. Power Tomorrow.</h2>
                 <p class="section-desc">We focus exclusively on engineering and technical roles at high-growth startups.</p>
             </div>
             <div class="services-grid">
@@ -842,7 +787,7 @@
         <div class="container">
             <div class="why-grid">
                 <div class="why-content fade-in">
-                    <h2>Why startups choose StackedSP</h2>
+                    <h2>Why Startups Choose StackedSP</h2>
                     <p>
                         We're not a generalist agency. We live and breathe the startup ecosystem. 
                         Our network is built from years in the Toronto and North American tech scene, 
@@ -940,7 +885,7 @@
     <section class="cta">
         <div class="container">
             <div class="cta-box fade-in">
-                <h2>Ready to build your team?</h2>
+                <h2>Ready to Build Your Team?</h2>
                 <p>Let's talk about your hiring needs and how we can help you find exceptional talent.</p>
                 <a href="mailto:ilan@stackedsp.com" class="btn">Get Started Today</a>
             </div>
@@ -951,7 +896,9 @@
     <footer>
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">StackedSP</div>
+                <a href="/" class="footer-logo">
+                    <img src="https://stackedsp.com/wp-content/uploads/2022/06/logo.svg" alt="StackedSP">
+                </a>
                 <ul class="footer-links">
                     <li><a href="mailto:ilan@stackedsp.com">Contact</a></li>
                     <li><a href="https://linkedin.com/company/stackedsp" target="_blank">LinkedIn</a></li>
