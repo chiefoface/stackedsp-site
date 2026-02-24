@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StackedSP | Elite Technical Recruiting</title>
-    <meta name="description" content="StackedSP places elite technical talent at venture-backed startups. We connect exceptional engineers with the companies building the future.">
+    <title>StackedSP | Technical Recruiting for Venture-Backed Startups</title>
+    <meta name="description" content="StackedSP places elite technical talent at venture-backed startups. We help founders build world-class engineering teams.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="icon" href="https://stackedsp.com/wp-content/uploads/2022/06/cropped-Stacked-Favicon-512-×-512-px-32x32.png" sizes="32x32">
     <style>
         :root {
-            --primary: #323232;
-            --secondary: #344a82;
+            --bg: #323232;
+            --bg-dark: #282828;
             --accent: #dbff00;
-            --text: #ffffff;
-            --text-muted: #bdbdbd;
-            --border: #484848;
-            --dark: #1a1a1a;
+            --blue: #344a82;
+            --white: #ffffff;
+            --gray: #9a9a9a;
+            --border: #444444;
         }
 
         * {
@@ -32,29 +32,32 @@
 
         body {
             font-family: 'Poppins', -apple-system, BlinkMacSystemFont, sans-serif;
-            background: var(--primary);
-            color: var(--text);
-            line-height: 1.7;
-            font-weight: 500;
-            font-size: 17px;
+            background: var(--bg);
+            color: var(--white);
+            font-size: 16px;
+            line-height: 1.6;
+            font-weight: 400;
             -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3, h4 {
             font-family: 'Bebas Neue', sans-serif;
-            text-transform: uppercase;
             font-weight: 400;
-            line-height: 1.2;
+            text-transform: uppercase;
             letter-spacing: 0.02em;
+            line-height: 1;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 1;
+            padding: 0 24px;
         }
 
         /* Navigation */
@@ -64,15 +67,14 @@
             left: 0;
             right: 0;
             z-index: 100;
-            padding: 1.5rem 0;
+            padding: 24px 0;
             transition: all 0.3s ease;
         }
 
         nav.scrolled {
-            background: rgba(50, 50, 50, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem 0;
+            background: rgba(40, 40, 40, 0.95);
+            backdrop-filter: blur(12px);
+            padding: 16px 0;
         }
 
         nav .container {
@@ -82,467 +84,357 @@
         }
 
         .logo img {
-            height: 40px;
+            height: 32px;
             width: auto;
         }
 
         .nav-links {
             display: flex;
-            gap: 2.5rem;
+            align-items: center;
+            gap: 40px;
             list-style: none;
         }
 
         .nav-links a {
-            color: var(--text);
-            text-decoration: none;
-            font-size: 14px;
-            font-weight: 700;
+            font-size: 13px;
+            font-weight: 500;
             text-transform: uppercase;
-            transition: color 0.2s ease;
+            letter-spacing: 0.05em;
+            color: var(--gray);
         }
 
         .nav-links a:hover {
-            color: var(--accent);
+            color: var(--white);
         }
 
         .nav-cta {
             background: var(--accent);
-            color: var(--primary);
-            padding: 0.75rem 1.5rem;
-            border-radius: 0;
-            text-decoration: none;
+            color: var(--bg);
+            padding: 10px 20px;
+            font-size: 13px;
             font-weight: 600;
-            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
             transition: all 0.2s ease;
         }
 
         .nav-cta:hover {
-            background: #fff;
-            transform: translateY(-1px);
+            background: var(--white);
         }
 
-        /* Hero Section */
+        /* Hero */
         .hero {
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 8rem 0 6rem;
-            position: relative;
-            overflow: hidden;
+            padding: 120px 0 80px;
         }
 
         .hero-content {
-            max-width: 800px;
-        }
-
-        .hero-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: var(--border);
-            border: 1px solid var(--border);
-            padding: 0.5rem 1rem;
-            border-radius: 0;
-            font-size: 0.85rem;
-            color: var(--text-muted);
-            margin-bottom: 2rem;
-        }
-
-        .hero-badge span {
-            width: 6px;
-            height: 6px;
-            background: var(--accent);
-            border-radius: 50%;
-            animation: pulse-dot 2s infinite;
-        }
-
-        @keyframes pulse-dot {
-            0%, 100% { opacity: 1; }
-            50% { opacity: 0.5; }
+            max-width: 720px;
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 8vw, 6rem);
+            font-size: clamp(48px, 8vw, 96px);
             line-height: 0.95;
-            margin-bottom: 1.5rem;
+            margin-bottom: 32px;
+        }
+
+        .hero h1 span {
             color: var(--accent);
         }
 
-        .hero h1 .white {
-            color: var(--text);
-        }
-
         .hero p {
-            font-size: 1.25rem;
-            color: var(--text-muted);
-            max-width: 600px;
-            margin-bottom: 2.5rem;
+            font-size: 18px;
+            color: var(--gray);
+            max-width: 480px;
+            margin-bottom: 40px;
             line-height: 1.7;
         }
 
-        .hero-buttons {
-            display: flex;
-            gap: 1rem;
-            flex-wrap: wrap;
-        }
-
         .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            font-weight: 600;
-            font-size: 1rem;
-            text-decoration: none;
-            transition: all 0.35s cubic-bezier(.3,.86,.36,.95);
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
+            display: inline-block;
             background: var(--accent);
-            color: var(--primary);
+            color: var(--bg);
+            padding: 14px 32px;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+            transition: all 0.2s ease;
         }
 
-        .btn-primary:hover {
-            background: #fff;
-            transform: translateY(-2px);
+        .btn:hover {
+            background: var(--white);
         }
 
-        .btn-secondary {
+        .btn-outline {
             background: transparent;
-            color: var(--text);
+            color: var(--white);
             border: 1px solid var(--border);
+            margin-left: 16px;
         }
 
-        .btn-secondary:hover {
-            background: var(--border);
-            border-color: var(--text-muted);
+        .btn-outline:hover {
+            border-color: var(--white);
+            background: transparent;
         }
 
-        /* Stats Section */
+        /* Stats */
         .stats {
-            padding: 6rem 0;
+            padding: 80px 0;
             border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
         }
 
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
+            gap: 48px;
         }
 
-        .stat {
+        .stat-item {
             text-align: center;
         }
 
         .stat-number {
             font-family: 'Bebas Neue', sans-serif;
-            font-size: 4rem;
+            font-size: 64px;
             color: var(--accent);
             line-height: 1;
+            margin-bottom: 8px;
         }
 
         .stat-label {
-            font-size: 0.9rem;
-            color: var(--text-muted);
-            margin-top: 0.5rem;
+            font-size: 13px;
+            color: var(--gray);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
         }
 
-        /* Services Section */
-        .services {
-            padding: 8rem 0;
+        /* Section */
+        section {
+            padding: 120px 0;
         }
 
         .section-header {
-            text-align: center;
-            max-width: 600px;
-            margin: 0 auto 4rem;
+            margin-bottom: 64px;
         }
 
-        .section-label {
-            font-family: 'Bebas Neue', sans-serif;
-            font-size: 1.25rem;
-            color: var(--accent);
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            margin-bottom: 1rem;
+        .section-header h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 16px;
         }
 
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
+        .section-header p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 480px;
         }
 
-        .section-desc {
-            color: var(--text-muted);
-            font-size: 1.1rem;
+        /* Services */
+        .services {
+            background: var(--bg-dark);
         }
 
         .services-grid {
             display: grid;
             grid-template-columns: repeat(3, 1fr);
-            gap: 2rem;
+            gap: 1px;
+            background: var(--border);
         }
 
-        .service-card {
-            background: var(--dark);
-            border: 1px solid var(--border);
-            padding: 2.5rem;
-            transition: all 0.35s cubic-bezier(.3,.86,.36,.95);
+        .service-item {
+            background: var(--bg-dark);
+            padding: 48px 32px;
+            transition: background 0.3s ease;
         }
 
-        .service-card:hover {
-            border-color: var(--accent);
-            transform: translateY(-5px);
+        .service-item:hover {
+            background: var(--bg);
         }
 
-        .service-icon {
-            width: 48px;
-            height: 48px;
-            background: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
+        .service-item h3 {
+            font-size: 28px;
+            margin-bottom: 12px;
         }
 
-        .service-card h3 {
-            font-size: 1.75rem;
-            margin-bottom: 0.75rem;
-        }
-
-        .service-card p {
-            color: var(--text-muted);
-            font-size: 0.95rem;
-            line-height: 1.7;
-        }
-
-        /* Why Section */
-        .why {
-            padding: 8rem 0;
-            background: var(--secondary);
-        }
-
-        .why-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 4rem;
-            align-items: center;
-        }
-
-        .why-content h2 {
-            font-size: clamp(2.5rem, 5vw, 3rem);
-            margin-bottom: 1.5rem;
-        }
-
-        .why-content p {
-            color: rgba(255,255,255,0.7);
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-        }
-
-        .why-features {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .why-feature {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-        }
-
-        .why-feature-icon {
-            width: 24px;
-            height: 24px;
-            background: var(--accent);
-            color: var(--primary);
-            border-radius: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.8rem;
-            flex-shrink: 0;
-            font-weight: 700;
-        }
-
-        .why-visual {
-            position: relative;
-        }
-
-        .why-card {
-            background: var(--primary);
-            border: 1px solid var(--border);
-            padding: 2rem;
-        }
-
-        .why-card-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 2rem;
-            padding-bottom: 1rem;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .why-card-title {
-            font-weight: 600;
-        }
-
-        .why-card-badge {
-            background: rgba(219, 255, 0, 0.15);
-            color: var(--accent);
-            padding: 0.25rem 0.75rem;
-            font-size: 0.8rem;
-            font-weight: 500;
-        }
-
-        .candidate-row {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .candidate-row:last-child {
-            border-bottom: none;
-        }
-
-        .candidate-avatar {
-            width: 40px;
-            height: 40px;
-            background: var(--secondary);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 0.9rem;
-        }
-
-        .candidate-info {
-            flex: 1;
-        }
-
-        .candidate-name {
-            font-weight: 500;
-            font-size: 0.95rem;
-        }
-
-        .candidate-role {
-            color: var(--text-muted);
-            font-size: 0.85rem;
-        }
-
-        .candidate-status {
-            font-size: 0.8rem;
-            padding: 0.25rem 0.75rem;
-            background: rgba(219, 255, 0, 0.1);
-            color: var(--accent);
-        }
-
-        /* Process Section */
-        .process {
-            padding: 8rem 0;
-        }
-
-        .process-steps {
-            display: grid;
-            grid-template-columns: repeat(4, 1fr);
-            gap: 2rem;
-            margin-top: 4rem;
-        }
-
-        .process-step {
-            position: relative;
-        }
-
-        .process-step::after {
-            content: '';
-            position: absolute;
-            top: 24px;
-            left: calc(100% + 1rem);
-            width: calc(100% - 48px);
-            height: 2px;
-            background: linear-gradient(90deg, var(--accent), transparent);
-        }
-
-        .process-step:last-child::after {
-            display: none;
-        }
-
-        .step-number {
-            font-family: 'Bebas Neue', sans-serif;
-            width: 48px;
-            height: 48px;
-            background: var(--dark);
-            border: 2px solid var(--accent);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: var(--accent);
-        }
-
-        .process-step h3 {
-            font-size: 1.5rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .process-step p {
-            color: var(--text-muted);
-            font-size: 0.9rem;
+        .service-item p {
+            font-size: 14px;
+            color: var(--gray);
             line-height: 1.6;
         }
 
-        /* CTA Section */
-        .cta {
-            padding: 8rem 0;
+        /* Approach */
+        .approach-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
         }
 
-        .cta-box {
-            background: var(--accent);
-            color: var(--primary);
-            padding: 4rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
+        .approach-content h2 {
+            font-size: clamp(36px, 5vw, 56px);
+            margin-bottom: 24px;
         }
 
-        .cta-box h2 {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            margin-bottom: 1rem;
-            color: var(--primary);
+        .approach-content p {
+            font-size: 16px;
+            color: var(--gray);
+            margin-bottom: 32px;
+            line-height: 1.8;
         }
 
-        .cta-box p {
-            font-size: 1.1rem;
-            max-width: 500px;
-            margin: 0 auto 2rem;
-            color: var(--primary);
-            opacity: 0.8;
+        .approach-list {
+            list-style: none;
         }
 
-        .cta-box .btn {
-            background: var(--primary);
+        .approach-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+            font-size: 15px;
+        }
+
+        .approach-list li:last-child {
+            border-bottom: none;
+        }
+
+        .approach-list .check {
             color: var(--accent);
+            font-weight: 600;
+            flex-shrink: 0;
         }
 
-        .cta-box .btn:hover {
-            background: var(--secondary);
-            color: #fff;
-            transform: translateY(-2px);
+        .approach-visual {
+            background: var(--bg-dark);
+            padding: 40px;
+            border: 1px solid var(--border);
+        }
+
+        .visual-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 24px;
+            margin-bottom: 24px;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .visual-title {
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .visual-badge {
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent);
+            background: rgba(219, 255, 0, 0.1);
+            padding: 4px 12px;
+        }
+
+        .pipeline-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 16px 0;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .pipeline-item:last-child {
+            border-bottom: none;
+        }
+
+        .pipeline-avatar {
+            width: 36px;
+            height: 36px;
+            background: var(--blue);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 600;
+        }
+
+        .pipeline-info {
+            flex: 1;
+        }
+
+        .pipeline-name {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .pipeline-role {
+            font-size: 12px;
+            color: var(--gray);
+        }
+
+        .pipeline-status {
+            font-size: 11px;
+            color: var(--accent);
+            text-transform: uppercase;
+            letter-spacing: 0.03em;
+        }
+
+        /* Process */
+        .process {
+            background: var(--bg-dark);
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 32px;
+        }
+
+        .process-item {
+            position: relative;
+        }
+
+        .process-number {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: 48px;
+            color: var(--accent);
+            margin-bottom: 16px;
+        }
+
+        .process-item h3 {
+            font-size: 22px;
+            margin-bottom: 8px;
+        }
+
+        .process-item p {
+            font-size: 14px;
+            color: var(--gray);
+            line-height: 1.6;
+        }
+
+        /* CTA */
+        .cta {
+            text-align: center;
+            padding: 160px 0;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 6vw, 72px);
+            margin-bottom: 24px;
+        }
+
+        .cta p {
+            font-size: 16px;
+            color: var(--gray);
+            max-width: 400px;
+            margin: 0 auto 40px;
         }
 
         /* Footer */
         footer {
-            padding: 4rem 0;
+            padding: 48px 0;
             border-top: 1px solid var(--border);
         }
 
@@ -553,346 +445,295 @@
         }
 
         .footer-logo img {
-            height: 30px;
+            height: 24px;
             width: auto;
+            opacity: 0.6;
         }
 
         .footer-links {
             display: flex;
-            gap: 2rem;
+            gap: 32px;
             list-style: none;
         }
 
         .footer-links a {
-            color: var(--text-muted);
-            text-decoration: none;
-            font-size: 0.9rem;
-            transition: color 0.2s ease;
+            font-size: 13px;
+            color: var(--gray);
         }
 
         .footer-links a:hover {
-            color: var(--accent);
+            color: var(--white);
         }
 
         .footer-copy {
-            color: var(--text-muted);
-            font-size: 0.85rem;
+            font-size: 12px;
+            color: var(--gray);
         }
 
-        /* Mobile Menu */
-        .mobile-menu-btn {
+        /* Mobile */
+        .menu-btn {
             display: none;
             background: none;
             border: none;
-            color: var(--text);
-            font-size: 1.5rem;
+            color: var(--white);
+            font-size: 24px;
             cursor: pointer;
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             .stats-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 40px;
             }
 
             .services-grid {
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .process-steps {
+            .process-grid {
                 grid-template-columns: repeat(2, 1fr);
-            }
-
-            .process-step::after {
-                display: none;
+                gap: 48px;
             }
         }
 
         @media (max-width: 768px) {
-            .nav-links, .nav-cta {
+            .nav-links {
                 display: none;
             }
 
-            .mobile-menu-btn {
+            .menu-btn {
                 display: block;
+            }
+
+            .hero h1 {
+                font-size: 48px;
             }
 
             .stats-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: 1.5rem;
             }
 
             .stat-number {
-                font-size: 3rem;
+                font-size: 48px;
             }
 
             .services-grid {
                 grid-template-columns: 1fr;
             }
 
-            .why-grid {
+            .approach-grid {
                 grid-template-columns: 1fr;
+                gap: 48px;
             }
 
-            .why-visual {
+            .approach-visual {
                 order: -1;
             }
 
-            .process-steps {
+            .process-grid {
                 grid-template-columns: 1fr;
-            }
-
-            .cta-box {
-                padding: 3rem 2rem;
+                gap: 40px;
             }
 
             .footer-content {
                 flex-direction: column;
-                gap: 2rem;
+                gap: 24px;
                 text-align: center;
             }
 
-            .footer-links {
-                flex-wrap: wrap;
-                justify-content: center;
+            .btn-outline {
+                margin-left: 0;
+                margin-top: 12px;
+                display: block;
             }
         }
 
         /* Animations */
-        .fade-in {
+        .fade-up {
             opacity: 0;
-            transform: translateY(20px);
-            transition: all 0.6s ease;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
         }
 
-        .fade-in.visible {
+        .fade-up.visible {
             opacity: 1;
             transform: translateY(0);
         }
     </style>
 </head>
 <body>
-    <!-- Navigation -->
-    <nav id="navbar">
+    <nav id="nav">
         <div class="container">
             <a href="/" class="logo">
                 <img src="https://stackedsp.com/wp-content/uploads/2022/06/logo.svg" alt="StackedSP">
             </a>
             <ul class="nav-links">
                 <li><a href="#services">Services</a></li>
-                <li><a href="#why">Why Us</a></li>
+                <li><a href="#approach">Approach</a></li>
                 <li><a href="#process">Process</a></li>
+                <li><a href="mailto:ilan@stackedsp.com" class="nav-cta">Contact</a></li>
             </ul>
-            <a href="mailto:ilan@stackedsp.com" class="nav-cta">Get in Touch</a>
-            <button class="mobile-menu-btn">☰</button>
+            <button class="menu-btn">Menu</button>
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <div class="hero-content fade-in">
-                <div class="hero-badge">
-                    <span></span>
-                    Currently placing at seed & Series A startups
-                </div>
-                <h1>
-                    <span class="white">You've got bold plans</span><br>
-                    to change the world.
-                </h1>
-                <p>
-                    We find you the extraordinary people you need to do that. StackedSP helps tech startups achieve audacious goals by stacking their teams with champions.
-                </p>
-                <div class="hero-buttons">
-                    <a href="mailto:ilan@stackedsp.com" class="btn btn-primary">
-                        Start Hiring →
-                    </a>
-                    <a href="#services" class="btn btn-secondary">
-                        Learn More
-                    </a>
-                </div>
+            <div class="hero-content fade-up">
+                <h1>We stack your team <span>with champions</span></h1>
+                <p>Technical recruiting for venture-backed startups. We connect exceptional engineering talent with companies building the future.</p>
+                <a href="mailto:ilan@stackedsp.com" class="btn">Start Hiring</a>
+                <a href="#services" class="btn btn-outline">Learn More</a>
             </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
     <section class="stats">
         <div class="container">
             <div class="stats-grid">
-                <div class="stat fade-in">
+                <div class="stat-item fade-up">
                     <div class="stat-number">150+</div>
-                    <div class="stat-label">Placements Made</div>
+                    <div class="stat-label">Placements</div>
                 </div>
-                <div class="stat fade-in">
+                <div class="stat-item fade-up">
                     <div class="stat-number">50+</div>
-                    <div class="stat-label">VC-Backed Clients</div>
+                    <div class="stat-label">Startup Partners</div>
                 </div>
-                <div class="stat fade-in">
+                <div class="stat-item fade-up">
                     <div class="stat-number">21</div>
-                    <div class="stat-label">Days Avg. Time-to-Hire</div>
+                    <div class="stat-label">Days Average</div>
                 </div>
-                <div class="stat fade-in">
+                <div class="stat-item fade-up">
                     <div class="stat-number">95%</div>
-                    <div class="stat-label">Retention Rate</div>
+                    <div class="stat-label">Retention</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
         <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-label">What We Do</div>
-                <h2 class="section-title">Hire Champions. Power Tomorrow.</h2>
-                <p class="section-desc">We focus exclusively on engineering and technical roles at high-growth startups.</p>
+            <div class="section-header fade-up">
+                <h2>What We Do</h2>
+                <p>We focus exclusively on technical roles at high-growth startups.</p>
             </div>
             <div class="services-grid">
-                <div class="service-card fade-in">
-                    <div class="service-icon">⚡</div>
-                    <h3>Full-Stack Engineers</h3>
-                    <p>From React to Rails, Node to Python. We find engineers who can build end-to-end.</p>
+                <div class="service-item fade-up">
+                    <h3>Full-Stack Engineering</h3>
+                    <p>End-to-end builders across modern stacks. React, Node, Python, Go, and beyond.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🧠</div>
-                    <h3>AI/ML Engineers</h3>
-                    <p>Machine learning, data science, and AI specialists for your most ambitious projects.</p>
+                <div class="service-item fade-up">
+                    <h3>AI & Machine Learning</h3>
+                    <p>ML engineers, research scientists, and applied AI specialists.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">☁️</div>
-                    <h3>Infrastructure & DevOps</h3>
-                    <p>Platform engineers, SREs, and cloud architects who scale systems reliably.</p>
+                <div class="service-item fade-up">
+                    <h3>Platform & Infrastructure</h3>
+                    <p>SREs, DevOps engineers, and cloud architects who scale.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">👥</div>
+                <div class="service-item fade-up">
                     <h3>Engineering Leadership</h3>
-                    <p>VPs, Directors, and Staff engineers who build teams and technical vision.</p>
+                    <p>VPs, Directors, and Staff engineers who build teams.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">📱</div>
-                    <h3>Mobile Engineers</h3>
-                    <p>iOS, Android, and cross-platform specialists for consumer and enterprise apps.</p>
+                <div class="service-item fade-up">
+                    <h3>Mobile Development</h3>
+                    <p>iOS and Android specialists for consumer and enterprise.</p>
                 </div>
-                <div class="service-card fade-in">
-                    <div class="service-icon">🔒</div>
-                    <h3>Security Engineers</h3>
-                    <p>AppSec, infrastructure security, and compliance specialists.</p>
+                <div class="service-item fade-up">
+                    <h3>Security Engineering</h3>
+                    <p>AppSec, infrastructure security, and compliance experts.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Section -->
-    <section class="why" id="why">
+    <section class="approach" id="approach">
         <div class="container">
-            <div class="why-grid">
-                <div class="why-content fade-in">
-                    <h2>Why Startups Choose StackedSP</h2>
-                    <p>
-                        We're not a generalist agency. We live and breathe the startup ecosystem. 
-                        Our network is built from years in the Toronto and North American tech scene, 
-                        and we only work with companies we believe in.
-                    </p>
-                    <div class="why-features">
-                        <div class="why-feature">
-                            <div class="why-feature-icon">✓</div>
-                            <span>Deep VC and founder network</span>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">✓</div>
-                            <span>Technical fluency — we speak engineer</span>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">✓</div>
-                            <span>Quality over quantity, always</span>
-                        </div>
-                        <div class="why-feature">
-                            <div class="why-feature-icon">✓</div>
-                            <span>90-day placement guarantee</span>
-                        </div>
-                    </div>
+            <div class="approach-grid">
+                <div class="approach-content fade-up">
+                    <h2>Built for Founders</h2>
+                    <p>We're not a generalist agency. We live in the startup ecosystem, understand technical roles deeply, and only partner with companies we believe in.</p>
+                    <ul class="approach-list">
+                        <li><span class="check">+</span> Deep network across North American tech</li>
+                        <li><span class="check">+</span> Technical fluency in every conversation</li>
+                        <li><span class="check">+</span> Quality candidates, not resume volume</li>
+                        <li><span class="check">+</span> 90-day placement guarantee</li>
+                    </ul>
                 </div>
-                <div class="why-visual fade-in">
-                    <div class="why-card">
-                        <div class="why-card-header">
-                            <span class="why-card-title">Active Pipeline</span>
-                            <span class="why-card-badge">Live</span>
+                <div class="approach-visual fade-up">
+                    <div class="visual-header">
+                        <span class="visual-title">Active Pipeline</span>
+                        <span class="visual-badge">Live</span>
+                    </div>
+                    <div class="pipeline-item">
+                        <div class="pipeline-avatar">SK</div>
+                        <div class="pipeline-info">
+                            <div class="pipeline-name">Sarah K.</div>
+                            <div class="pipeline-role">Staff Engineer, Ex-Stripe</div>
                         </div>
-                        <div class="candidate-row">
-                            <div class="candidate-avatar">SK</div>
-                            <div class="candidate-info">
-                                <div class="candidate-name">Sarah K.</div>
-                                <div class="candidate-role">Staff Engineer · Ex-Stripe</div>
-                            </div>
-                            <div class="candidate-status">Final Round</div>
+                        <div class="pipeline-status">Final</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <div class="pipeline-avatar">MR</div>
+                        <div class="pipeline-info">
+                            <div class="pipeline-name">Marcus R.</div>
+                            <div class="pipeline-role">ML Lead, Ex-OpenAI</div>
                         </div>
-                        <div class="candidate-row">
-                            <div class="candidate-avatar">MR</div>
-                            <div class="candidate-info">
-                                <div class="candidate-name">Marcus R.</div>
-                                <div class="candidate-role">ML Lead · Ex-OpenAI</div>
-                            </div>
-                            <div class="candidate-status">Screening</div>
+                        <div class="pipeline-status">Screen</div>
+                    </div>
+                    <div class="pipeline-item">
+                        <div class="pipeline-avatar">JL</div>
+                        <div class="pipeline-info">
+                            <div class="pipeline-name">Jamie L.</div>
+                            <div class="pipeline-role">Platform, Ex-Shopify</div>
                         </div>
-                        <div class="candidate-row">
-                            <div class="candidate-avatar">JL</div>
-                            <div class="candidate-info">
-                                <div class="candidate-name">Jamie L.</div>
-                                <div class="candidate-role">Platform · Ex-Shopify</div>
-                            </div>
-                            <div class="candidate-status">Offer Stage</div>
-                        </div>
+                        <div class="pipeline-status">Offer</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Process Section -->
     <section class="process" id="process">
         <div class="container">
-            <div class="section-header fade-in">
-                <div class="section-label">How It Works</div>
-                <h2 class="section-title">Simple, Transparent Process</h2>
-                <p class="section-desc">From first call to signed offer in weeks, not months.</p>
+            <div class="section-header fade-up">
+                <h2>How It Works</h2>
+                <p>From first call to signed offer, typically in three weeks.</p>
             </div>
-            <div class="process-steps">
-                <div class="process-step fade-in">
-                    <div class="step-number">1</div>
-                    <h3>Discovery Call</h3>
-                    <p>We learn your tech stack, culture, and exactly what "great" looks like for your team.</p>
+            <div class="process-grid">
+                <div class="process-item fade-up">
+                    <div class="process-number">01</div>
+                    <h3>Discovery</h3>
+                    <p>We learn your stack, culture, and what great looks like for your team.</p>
                 </div>
-                <div class="process-step fade-in">
-                    <div class="step-number">2</div>
-                    <h3>Targeted Search</h3>
-                    <p>We activate our network and source candidates who match your specific requirements.</p>
+                <div class="process-item fade-up">
+                    <div class="process-number">02</div>
+                    <h3>Search</h3>
+                    <p>We activate our network for candidates matching your requirements.</p>
                 </div>
-                <div class="process-step fade-in">
-                    <div class="step-number">3</div>
-                    <h3>Curated Shortlist</h3>
-                    <p>You receive 3-5 pre-vetted candidates with detailed profiles and our assessment.</p>
+                <div class="process-item fade-up">
+                    <div class="process-number">03</div>
+                    <h3>Present</h3>
+                    <p>You receive 3-5 pre-vetted candidates with detailed assessments.</p>
                 </div>
-                <div class="process-step fade-in">
-                    <div class="step-number">4</div>
-                    <h3>Close & Onboard</h3>
-                    <p>We help negotiate, close, and ensure a smooth start for your new hire.</p>
+                <div class="process-item fade-up">
+                    <div class="process-number">04</div>
+                    <h3>Close</h3>
+                    <p>We help negotiate and ensure a smooth start for your new hire.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="cta">
         <div class="container">
-            <div class="cta-box fade-in">
-                <h2>Ready to Build Your Team?</h2>
-                <p>Let's talk about your hiring needs and how we can help you find exceptional talent.</p>
-                <a href="mailto:ilan@stackedsp.com" class="btn">Get Started Today</a>
+            <div class="fade-up">
+                <h2>Ready to Build?</h2>
+                <p>Let's find the talent your company needs to reach the next stage.</p>
+                <a href="mailto:ilan@stackedsp.com" class="btn">Get in Touch</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
             <div class="footer-content">
@@ -902,54 +743,32 @@
                 <ul class="footer-links">
                     <li><a href="mailto:ilan@stackedsp.com">Contact</a></li>
                     <li><a href="https://linkedin.com/company/stackedsp" target="_blank">LinkedIn</a></li>
-                    <li><a href="https://twitter.com/stackedsp" target="_blank">Twitter</a></li>
                 </ul>
-                <div class="footer-copy">© 2026 StackedSP. All rights reserved.</div>
+                <div class="footer-copy">2026 StackedSP</div>
             </div>
         </div>
     </footer>
 
     <script>
-        // Navbar scroll effect
-        const navbar = document.getElementById('navbar');
+        const nav = document.getElementById('nav');
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 50) {
-                navbar.classList.add('scrolled');
-            } else {
-                navbar.classList.remove('scrolled');
-            }
+            nav.classList.toggle('scrolled', window.scrollY > 50);
         });
-
-        // Fade in on scroll
-        const fadeElements = document.querySelectorAll('.fade-in');
-        
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
 
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
                     entry.target.classList.add('visible');
-                    observer.unobserve(entry.target);
                 }
             });
-        }, observerOptions);
+        }, { threshold: 0.1 });
 
-        fadeElements.forEach(el => observer.observe(el));
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-        // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
+        document.querySelectorAll('a[href^="#"]').forEach(a => {
+            a.addEventListener('click', e => {
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
-                if (target) {
-                    target.scrollIntoView({
-                        behavior: 'smooth',
-                        block: 'start'
-                    });
-                }
+                document.querySelector(a.getAttribute('href'))?.scrollIntoView({ behavior: 'smooth' });
             });
         });
     </script>
